@@ -26,6 +26,15 @@ public class Quiz {
 	}
 	
 	public void takeQuiz() {
+		int sum1 = 0;
+		for (int i =0; i < questions.length;i++) {
+			questions[i].displayPrompt();
+			int point= questions[i].checkAnswer(getUserAnswer());
+			System.out.println("The point for question " + (i+1) + " is: "+ point );
+			sum1 += point;
+		}
+		System.out.println("The point of this exam: " + sum1);
+		System.out.println("Total available points: " + this.getTotalPoints());
 		//FIXME
 	}
 	
